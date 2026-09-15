@@ -1,6 +1,3 @@
-package my.studying.networking.notesapp_v2
-
-import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
