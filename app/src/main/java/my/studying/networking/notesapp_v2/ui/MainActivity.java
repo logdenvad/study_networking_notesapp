@@ -21,16 +21,17 @@ public class MainActivity extends AppCompatActivity {
         if (navHostFragment != null) {
             NavController navController = navHostFragment.getNavController();
             NavigationUI.setupActionBarWithNavController(this, navController);
-
-            public boolean onSupportNavigateUp() {
-                NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
-                        .findFragmentById(R.id.nav_host_fragment);
-                if (navHostFragment != null) {
-                    NavController navController = navHostFragment.getNavController();
-                    return navController.navigateUp() || super.onSupportNavigateUp();
-                }
-                return super.onSupportNavigateUp();
-            }
         }
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.nav_host_fragment);
+        if (navHostFragment != null) {
+            NavController navController = navHostFragment.getNavController();
+            return navController.navigateUp() || super.onSupportNavigateUp();
+        }
+        return super.onSupportNavigateUp();
     }
 }
