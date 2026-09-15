@@ -14,8 +14,8 @@ import my.studying.networking.notesapp_v2.data.NoteDatabase;
 
 public class NoteRepository {
 
-    private NoteDao noteDao;
-    private ExecutorService executorService;
+    private final NoteDao noteDao;
+    private final ExecutorService executorService;
 
     public NoteRepository(Application application) {
         NoteDatabase database = NoteDatabase.getInstance(application);
@@ -23,20 +23,28 @@ public class NoteRepository {
         this.executorService = Executors.newSingleThreadExecutor();
     }
 
+    public NoteRepository(NoteDao noteDao, ExecutorService executorService) {
+        this.noteDao = noteDao;
+        this.executorService = executorService;
+    }
+
     public LiveData<List<Note>> getAllNotes() {
-        return null;
+        return noteDao.getAllNotes();
     }
 
     public LiveData<Note> getNoteById(int id) {
-        return null;
+        return noteDao.getNoteById(id);
     }
 
     public void insert(Note note) {
+        executorService.execute(() -> noteDao.insert(note));
     }
 
     public void update(Note note) {
+        executorService.execute(() -> noteDao.update(note));
     }
 
     public void delete(Note note) {
+        executorService.execute(() -> noteDao.delete(note));
     }
 }

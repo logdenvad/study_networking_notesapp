@@ -1,6 +1,7 @@
 package my.studying.networking.notesapp_v2.data;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "notes")
@@ -16,6 +17,18 @@ public class Note {
         this.name = name;
         this.date = date;
         this.text = text;
+    }
+
+    @Ignore
+    public Note(int id, String name, long date, String text) {
+        this.id = id;
+        this.name = name;
+        this.date = date;
+        this.text = text;
+    }
+
+    @Ignore
+    public Note() {
     }
 
     public int getId() {
