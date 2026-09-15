@@ -18,9 +18,7 @@ public class NoteRepository {
     private final ExecutorService executorService;
 
     public NoteRepository(Application application) {
-        NoteDatabase database = NoteDatabase.getInstance(application);
-        this.noteDao = database.noteDao();
-        this.executorService = Executors.newSingleThreadExecutor();
+        this(NoteDatabase.getInstance(application).noteDao(), Executors.newSingleThreadExecutor());
     }
 
     public NoteRepository(NoteDao noteDao, ExecutorService executorService) {
