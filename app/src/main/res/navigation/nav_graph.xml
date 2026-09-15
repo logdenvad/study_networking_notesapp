@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- file: app/src/main/res/navigation/nav_graph.xml -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/notesListFragment">
+
+    <fragment
+        android:id="@+id/notesListFragment"
+        android:name="my.studying.networking.notesapp_v2.ui.NotesListFragment"
+        android:label="My Notes">
+        <action
+            android:id="@+id/action_notesListFragment_to_noteDetailsFragment"
+            app:destination="@id/noteDetailsFragment" />
+        <action
+            android:id="@+id/action_notesListFragment_to_addEditNoteFragment"
+            app:destination="@id/addEditNoteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/noteDetailsFragment"
+        android:name="my.studying.networking.notesapp_v2.ui.NoteDetailsFragment"
+        android:label="Note Details">
+        <argument
+            android:name="noteId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_noteDetailsFragment_to_addEditNoteFragment"
+            app:destination="@id/addEditNoteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addEditNoteFragment"
+        android:name="my.studying.networking.notesapp_v2.ui.AddEditNoteFragment"
+        android:label="Add / Edit Note">
+        <argument
+            android:name="noteId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>
