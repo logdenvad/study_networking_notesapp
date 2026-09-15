@@ -1,8 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.navigation.safeargs)
 }
-
-apply(plugin = "androidx.navigation.safeargs")
 
 android {
     namespace = "my.studying.networking.notesapp_v2"
