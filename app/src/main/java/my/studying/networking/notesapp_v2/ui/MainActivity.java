@@ -33,5 +33,3 @@ public class MainActivity extends AppCompatActivity {
             return navController.navigateUp() || super.onSupportNavigateUp();
         }
         return super.onSupportNavigateUp();
-    }
-}
