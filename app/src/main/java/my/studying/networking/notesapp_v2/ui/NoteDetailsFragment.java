@@ -49,8 +49,7 @@ public class NoteDetailsFragment extends Fragment {
         btnDelete = view.findViewById(R.id.btn_delete_note);
 
         if (getArguments() != null) {
-            NoteDetailsFragmentArgs args = NoteDetailsFragmentArgs.fromBundle(getArguments());
-            noteId = args.getNoteId();
+            noteId = getArguments().getInt("noteId", -1);
         }
 
         noteViewModel = new ViewModelProvider(this).get(NoteViewModel.class);
@@ -65,10 +64,9 @@ public class NoteDetailsFragment extends Fragment {
 
         btnEdit.setOnClickListener(v -> {
             NavController navController = Navigation.findNavController(v);
-            NoteDetailsFragmentDirections.ActionNoteDetailsFragmentToAddEditNoteFragment action =
-                    NoteDetailsFragmentDirections.actionNoteDetailsFragmentToAddEditNoteFragment();
-            action.setNoteId(noteId);
-            navController.navigate(action);
+            Bundle args = new Bundle();
+            args.putInt("noteId", noteId);
+            navController.navigate(R.id.action_noteDetailsFragment_to_addEditNoteFragment, args);
         });
 
         btnDelete.setOnClickListener(v -> {

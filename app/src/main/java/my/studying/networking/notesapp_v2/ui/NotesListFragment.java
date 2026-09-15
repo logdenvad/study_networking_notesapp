@@ -44,9 +44,9 @@ public class NotesListFragment extends Fragment {
 
         noteAdapter = new NoteAdapter(note -> {
             NavController navController = Navigation.findNavController(view);
-            NotesListFragmentDirections.ActionNotesListFragmentToNoteDetailsFragment action =
-                    NotesListFragmentDirections.actionNotesListFragmentToNoteDetailsFragment(note.getId());
-            navController.navigate(action);
+            Bundle args = new Bundle();
+            args.putInt("noteId", note.getId());
+            navController.navigate(R.id.action_notesListFragment_to_noteDetailsFragment, args);
         });
 
         rvNotes.setLayoutManager(new LinearLayoutManager(requireContext()));
@@ -54,7 +54,7 @@ public class NotesListFragment extends Fragment {
 
         fabAddNote.setOnClickListener(v -> {
             NavController navController = Navigation.findNavController(v);
-            navController.navigate(NotesListFragmentDirections.actionNotesListFragmentToAddEditNoteFragment());
+            navController.navigate(R.id.action_notesListFragment_to_addEditNoteFragment);
         });
 
         noteViewModel = new ViewModelProvider(this).get(NoteViewModel.class);

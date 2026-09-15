@@ -59,8 +59,7 @@ public class AddEditNoteFragment extends Fragment {
         }
 
         if (getArguments() != null) {
-            AddEditNoteFragmentArgs args = AddEditNoteFragmentArgs.fromBundle(getArguments());
-            noteId = args.getNoteId();
+            noteId = getArguments().getInt("noteId", -1);
         }
 
         isEditMode = (noteId != -1);
