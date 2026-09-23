@@ -17,6 +17,7 @@ import androidx.navigation.Navigation;
 
 import my.studying.networking.notesapp_v2.R;
 import my.studying.networking.notesapp_v2.data.Note;
+import my.studying.networking.notesapp_v2.model.NoteViewModel;
 import my.studying.networking.notesapp_v2.util.DateFormatter;
 
 public class NoteDetailsFragment extends Fragment {

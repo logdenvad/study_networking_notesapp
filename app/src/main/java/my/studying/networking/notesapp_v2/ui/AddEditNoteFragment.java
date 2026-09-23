@@ -20,6 +20,7 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import my.studying.networking.notesapp_v2.R;
 import my.studying.networking.notesapp_v2.data.Note;
+import my.studying.networking.notesapp_v2.model.NoteViewModel;
 
 public class AddEditNoteFragment extends Fragment {
 

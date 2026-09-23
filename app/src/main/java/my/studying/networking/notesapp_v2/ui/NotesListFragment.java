@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import my.studying.networking.notesapp_v2.R;
+import my.studying.networking.notesapp_v2.model.NoteViewModel;
 
 public class NotesListFragment extends Fragment {
 

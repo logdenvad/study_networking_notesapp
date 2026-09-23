@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">NotesAppv2</string>
+    <string name="note_body_hint">Note Body</string>
+    <string name="note_title">Note Title</string>
+    <string name="save">Save</string>
 </resources>

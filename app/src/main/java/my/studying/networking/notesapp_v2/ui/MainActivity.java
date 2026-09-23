@@ -13,6 +13,8 @@ import my.studying.networking.notesapp_v2.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    NavController navController;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,12 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.nav_host_fragment);
-        if (navHostFragment != null) {
-            NavController navController = navHostFragment.getNavController();
-            return navController.navigateUp() || super.onSupportNavigateUp();
-        }
-        return super.onSupportNavigateUp();
+        return (navController != null && navController.navigateUp())
+                || super.onSupportNavigateUp();
     }
 }

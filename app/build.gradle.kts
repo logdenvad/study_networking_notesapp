@@ -5,9 +5,7 @@ plugins {
 android {
     namespace = "my.studying.networking.notesapp_v2"
     compileSdk {
-        version = release(37) {
-            minorApiLevel = 1
-        }
+        version = release(37)
     }
 
     defaultConfig {
@@ -37,6 +35,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.core)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -48,7 +47,8 @@ dependencies {
     implementation(libs.androidx.room.runtime)
     annotationProcessor(libs.androidx.room.compiler)
     testImplementation(libs.junit)
-    testImplementation("androidx.arch.core:core-testing:2.2.0")
+    testImplementation(libs.androidx.core.testing)
+    testImplementation(libs.org.roboelectric)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
 }

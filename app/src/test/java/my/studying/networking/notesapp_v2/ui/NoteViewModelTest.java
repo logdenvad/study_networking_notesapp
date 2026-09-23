@@ -14,6 +14,7 @@ import java.util.Collections;
 import java.util.List;
 
 import my.studying.networking.notesapp_v2.data.Note;
+import my.studying.networking.notesapp_v2.model.NoteViewModel;
 import my.studying.networking.notesapp_v2.repository.NoteRepository;
 
 import static org.junit.Assert.assertEquals;

@@ -1,4 +1,4 @@
-package my.studying.networking.notesapp_v2.ui;
+package my.studying.networking.notesapp_v2.model;
 
 import android.app.Application;
 
@@ -44,17 +44,5 @@ public class NoteViewModel extends AndroidViewModel {
 
     public void delete(Note note) {
         repository.delete(note);
-    }
-
-    public void insertNote(Note note) {
-        insert(note);
-    }
-
-    public void updateNote(Note note) {
-        update(note);
-    }
-
-    public void deleteNote(Note note) {
-        delete(note);
     }
 }
